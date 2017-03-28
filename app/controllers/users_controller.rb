@@ -1,22 +1,18 @@
 class UsersController < ApplicationController
-  def index
-  end
 
-  def show
-  end
-
-  def new
-  end
-
-  def create
-  end
+  before_action :set_user
 
   def edit
+
   end
 
   def update
   end
 
-  def delete
+  private
+
+  def set_user
+    @user = current_user # instead of User.find(params[:id]) for security reasons
   end
+
 end
