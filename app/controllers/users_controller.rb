@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  ##We don't need add and create here as users will always come thru the account signup path before reaching this point.
+
   before_action :set_user
 
   def edit

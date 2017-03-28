@@ -3,6 +3,7 @@ class ToiletsController < ApplicationController
   skip_before_action :authenticate_account!, only: :index
 
   def index
+    @toilets = Toilet.all
   end
 
   def show
