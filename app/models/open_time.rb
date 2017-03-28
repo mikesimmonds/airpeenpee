@@ -1,3 +1,3 @@
 class OpenTime < ApplicationRecord
-  belongs_to :toilet_id
+  belongs_to :toilet
 end
