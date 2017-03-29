@@ -3,8 +3,11 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_account!
 
+  attr_reader :current_user
+  helper_method :current_user
+
   def current_user
-    current_account.try(:user)
+    @current_user ||= current_account.try(:user)
   end
 
 end
