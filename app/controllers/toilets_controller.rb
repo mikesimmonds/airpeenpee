@@ -11,10 +11,14 @@ class ToiletsController < ApplicationController
   end
 
   def new
-    @toilet = Toilet.new
+      @toilet = Toilet.new
   end
 
   def create
+    @toilet = Toilet.new(toilet_params)
+    @toilet.user_id = current_user.id
+    @toilet.save
+    redirect_to root_path
 
   end
 
@@ -26,4 +30,9 @@ class ToiletsController < ApplicationController
 
   def delete
   end
+
+  def toilet_params
+    params.require(:toilet).permit(:location_name, :toilet_type, :location_address, :price, :shittable, :has_paper)
+  end
+
 end
