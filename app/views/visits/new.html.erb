@@ -3,8 +3,15 @@
 
 <!-- ####Not implemented -->
 
-<%= simple_form_for @visit do |f| %>
-  <%= f.input :username %>
-  <%= f.input :password %>
-  <%= f.button :submit %>
-<% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row col-md-12">
+      <%= simple_form_for @visit do |f| %>
+        <%= f.input :username %>
+        <%= f.input :password %>
+        <%= f.button :submit %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
