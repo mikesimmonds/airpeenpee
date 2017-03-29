@@ -1,9 +1,8 @@
-<h1>Toilets#index</h1>
-<p>Find me in app/views/toilets/index.html.erb</p>
-This is the page that lists all the toilets
-
-<% @toilets.each do |toilet|%>
-<p>
-  toilet id:<%= toilet.id %>
-</p>
-<%end%>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://tribktla.files.wordpress.com/2014/07/venice-carjacking-map.jpg');">
+  <div class="banner-content">
+    <h1>Air PnP</h1>
+    <p>Care where you pee</p>
+    <%= link_to "Pee", "#", { class: "btn btn-primary btn-lg" } %>
+    <%= link_to "Poo", "#", { class: "btn btn-danger btn-lg" } %>
+  </div>
+</div>
