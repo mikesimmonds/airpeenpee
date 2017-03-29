@@ -27,3 +27,10 @@
 #toilet-list {
   list-style-type: none;
 }
+
+#toilet-name {
+  text-decoration: none;
+  &:hover{
+    color: white;
+  }
+}

@@ -7,12 +7,14 @@
     <%= link_to "Poo", "#", { class: "btn btn-danger btn-lg", id: "poo-btn" } %>
     <br>
     <br>
-    <%= link_to "Filter your search", "#", { class: "btn btn-info btn-lg" } %>
+    <%= link_to "Filter your search", "#", { class: "btn btn-info btn-lg", id: "filter-btn" } %>
     <ul id="toilet-list" class="hidden">
 
     <% @toilets.each do |t| %>
     <li>
-      <%= t.location_name %>
+      <h3><%= link_to t.location_name, "#", { id: "toilet-name" } %></h3>
+      <h4><%= t.toilet_type %><h4>
+      <h5><strong>Price:</strong> <%= t.price %></h5>
     </li>
     <% end %>
 

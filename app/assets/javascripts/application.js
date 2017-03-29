@@ -8,8 +8,8 @@ $( document ).ready(function(){
   // Pee and Poo buttons
 
   $('#pee-btn, #poo-btn').click(function(){
-    $('.banner-content > h1, p, #pee-btn, #poo-btn').fadeOut(2000, function(){
-      $('#toilet-list').fadeIn(2000).removeClass('hidden');
+    $('.banner-content > h1, p, #pee-btn, #poo-btn, #filter-btn').fadeOut(500, function(){
+      $('#toilet-list').fadeIn(500).removeClass('hidden');
     });
   });
 
