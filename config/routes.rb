@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :accounts, controllers: { registrations: "registrations"}
   resources :open_times
 
-  resources :users, only: [:edit, :update]
+  resources :users #, only: [:edit, :update] is this slow
   resources :toilets, :visits
 
-  devise_for :accounts, :controllers => { registrations: "accounts"}
+  # devise_for :accounts, :controllers => { registrations: "accounts"}
 
 
   root to: 'toilets#index'

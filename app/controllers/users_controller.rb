@@ -11,9 +11,7 @@ class UsersController < ApplicationController
   def update
     # @user = User.new(user_params)
     @user.gender = user_params[:gender]
-    byebug
     @user.save!
-    redirect_to 'toilets_path'
   end
 
   private
