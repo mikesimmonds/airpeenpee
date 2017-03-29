@@ -1,2 +1,8 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+this is the edit sheet that users are directed to after signing up
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :gender %>
+  <%= f.button :submit %>
+<% end %>
