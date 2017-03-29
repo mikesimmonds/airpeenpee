@@ -7,12 +7,15 @@ class ToiletsController < ApplicationController
   end
 
   def show
+    @toilets = Toilets.where(toilet.user.id == current_account.id)
   end
 
   def new
+    @toilet = Toilet.new
   end
 
   def create
+    
   end
 
   def edit

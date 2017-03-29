@@ -5,16 +5,27 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def edit
+    #In edit first byebug
+    byebug
 
   end
 
   def update
+    # @user = User.new(user_params)
+
+    
+    @user.save!
+    redirect_to 'toilets_path'
   end
 
   private
 
+  def user_params
+    params.require(:user).permit(:gender, :account_id, :user_id)
+  end
+
   def set_user
-    @user = current_user # instead of User.find(params[:id]) for security reasons
+    @user = current_user # instead of User.find(params[:id]) for security reasons as someone could just change the url and access another account
   end
 
 end
