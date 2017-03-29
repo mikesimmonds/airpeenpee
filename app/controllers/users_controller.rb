@@ -5,15 +5,13 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def edit
-    #In edit first byebug
-    byebug
 
   end
 
   def update
     # @user = User.new(user_params)
-
-    
+    @user.gender = user_params[:gender]
+    byebug
     @user.save!
     redirect_to 'toilets_path'
   end

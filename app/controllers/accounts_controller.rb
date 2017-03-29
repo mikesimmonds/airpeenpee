@@ -11,12 +11,12 @@ class AccountsController < Devise::RegistrationsController
   def create
     super do
       @user = User.new(account_id: resource.id)
-      @user.save
+      @user.save!
     end
   end
 
   def after_sign_up_path_for(resource)
-    edit_user_path(resource.id)
+    edit_user_path(resource) #maybe change this and remove .id
   end
 
 end
