@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :accounts, controllers: { registrations: "registrations"}
+  devise_for :accounts
+
   resources :open_times
 
-  resources :users #, only: [:edit, :update] is this slow
+  resources :users, only: [:edit, :update]
   resources :toilets, :visits
 
   # devise_for :accounts, :controllers => { registrations: "accounts"}
