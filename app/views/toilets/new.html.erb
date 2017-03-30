@@ -1,2 +1,10 @@
 <h1>Toilets#new</h1>
 <p>Find me in app/views/toilets/new.html.erb</p>
+
+<%= simple_form_for @toilet do |f| %>
+  <%= f.input :location_name %>
+  <%= f.input :toilet_type %>
+  <%= f.input :location_address %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
