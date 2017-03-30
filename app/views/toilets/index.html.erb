@@ -1,5 +1,6 @@
 <div class="text-center">
 
+<<<<<<< HEAD
   <div class="map"></div>
 
 
@@ -19,11 +20,32 @@
           <% end %>
         <% end %>
       </div>
+=======
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://tribktla.files.wordpress.com/2014/07/venice-carjacking-map.jpg');">
+  <div class="banner-content">
+    <h1>Air PnP</h1>
+    <p>Care where you pee</p>
+    <%= link_to "Pee", "#", { class: "btn btn-primary btn-lg", id: "pee-btn" } %>
+    <%= link_to "Poo", "#", { class: "btn btn-danger btn-lg", id: "poo-btn" } %>
+    <br>
+    <br>
+    <%= link_to "Filter your search", "#", { class: "btn btn-info btn-lg", id: "filter-btn" } %>
+    <ul id="toilet-list" class="hidden">
+
+    <% @toilets.each do |t| %>
+    <li>
+      <h3><%= link_to t.location_name, "#", { id: "toilet-name" } %></h3>
+      <h4><%= t.toilet_type %><h4>
+      <h5><strong>Price:</strong> <%= t.price %></h5>
+    </li>
+>>>>>>> fcaad00bf91a22446a17b1e2df167d77cad83168
     <% end %>
 
   </div>
 
 </div>
+
+<%= render 'components/map' %>
 
 
 
