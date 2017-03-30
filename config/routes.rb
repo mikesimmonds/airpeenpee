@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :open_times
 
   resources :users, only: [:edit, :update]
-  resources :toilets, :visits
+  resources :toilets do
+    resources :visits
+  end
 
   devise_for :accounts, :controllers => { registrations: "registrations"}
 

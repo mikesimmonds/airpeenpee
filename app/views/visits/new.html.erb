@@ -6,12 +6,12 @@
 <div class="wrapper">
   <div class="container">
     <div class="row col-md-12">
-      <%= simple_form_for @visit do |f| %>
-        <%= f.input :username %>
-        <%= f.input :password %>
+      <%= simple_form_for [@toilet, @visit] do |f| %>
+        <%= f.input :rating %>
+        <%= f.input :has_paper %>
+        <%= f.input :comment %>
         <%= f.button :submit %>
     <% end %>
     </div>
   </div>
 </div>
-
