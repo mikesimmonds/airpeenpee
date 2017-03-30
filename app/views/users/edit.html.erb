@@ -2,12 +2,15 @@
 <p>Find me in app/views/users/edit.html.erb</p>
 this is the edit sheet that users are directed to after signing up
 
-
 <div class="wrapper">
   <div class="container">
     <div class="row col-md-12">
       <%= simple_form_for @user do |f| %>
-        <%= f.input :gender %>
+        <%= f.select(:gender) do %>
+          <% [['Male', 'male'], ['Female', 'female'], ['Rather not say', 'no-gender']].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
         <%= f.button :submit %>
       <% end %>
     </div>

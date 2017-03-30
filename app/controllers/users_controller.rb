@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     # @user = User.new(user_params)
     @user.gender = user_params[:gender]
     @user.save!
+    flash[:notice] = "Gender set"
     redirect_to root_path
   end
 
