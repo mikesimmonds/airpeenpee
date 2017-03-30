@@ -1,0 +1,57 @@
+.map {
+  height: 400px;
+  width: 100%;
+  background-image: url('https://tribktla.files.wordpress.com/2014/07/venice-carjacking-map.jpg');
+}
+
+.toilet-results-container {
+  margin-top: 10px;
+}
+
+.toilet-card {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(173, 191, 221, 0.2);
+  margin: 0, 10px, 0, 10px;
+}
+
+.toilet-card-details {
+  list-style-type: none;
+}
+
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+
+#toilet-list {
+  list-style-type: none;
+}
+
+#toilet-name {
+  text-decoration: none;
+  &:hover{
+    color: white;
+  }
+}

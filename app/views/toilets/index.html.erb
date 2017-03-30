@@ -1,4 +1,26 @@
+<div class="text-center">
 
+<<<<<<< HEAD
+  <div class="map"></div>
+
+
+  <div class="container toilet-results-container">
+
+    <% @toilets.each_slice(3) do |trio| %>
+      <div class="row">
+        <% trio.each do |t| %>
+          <%= link_to toilet_path(t.id) do %>
+            <div class="col-md-4 col-xs-12 toilet-card text-center">
+              <ul class="toilet-card-details">
+                <li><%= t.location_name %></li>
+                <li><%= t.toilet_type %></li>
+                <li><strong>Price: </strong><%= t.price %></li>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+=======
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://tribktla.files.wordpress.com/2014/07/venice-carjacking-map.jpg');">
   <div class="banner-content">
     <h1>Air PnP</h1>
@@ -16,13 +38,18 @@
       <h4><%= t.toilet_type %><h4>
       <h5><strong>Price:</strong> <%= t.price %></h5>
     </li>
+>>>>>>> fcaad00bf91a22446a17b1e2df167d77cad83168
     <% end %>
 
-    </ul>
   </div>
+
 </div>
 
 <%= render 'components/map' %>
+
+
+
+
 
 
 
