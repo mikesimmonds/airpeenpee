@@ -1,17 +1,19 @@
-<h1>Visits#new</h1>
-<p>Find me in app/views/visits/new.html.erb</p>
 
-<!-- ####Not implemented -->
 
 <div class="wrapper">
   <div class="container">
-    <div class="row col-md-12">
-      <%= simple_form_for [@toilet, @visit] do |f| %>
-        <%= f.input :rating %>
-        <%= f.input :has_paper %>
-        <%= f.input :comment %>
-        <%= f.button :submit %>
-    <% end %>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>How was your visit?</p>
+        <div class="form-container">
+          <%= simple_form_for [@toilet, @visit] do |f| %>
+          <%= f.input :rating %>
+          <%= f.input :has_paper %>
+          <%= f.input :comment %>
+          <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
