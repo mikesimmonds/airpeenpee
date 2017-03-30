@@ -1,24 +1,33 @@
+<div class="text-center">
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://tribktla.files.wordpress.com/2014/07/venice-carjacking-map.jpg');">
-  <div class="banner-content">
-    <h1>Air PnP</h1>
-    <p>Care where you pee</p>
-    <%= link_to "Pee", "#", { class: "btn btn-primary btn-lg", id: "pee-btn" } %>
-    <%= link_to "Poo", "#", { class: "btn btn-danger btn-lg", id: "poo-btn" } %>
-    <br>
-    <br>
-    <%= link_to "Filter your search", "#", { class: "btn btn-info btn-lg" } %>
-    <ul id="toilet-list" class="hidden">
+  <div class="map"></div>
 
-    <% @toilets.each do |t| %>
-    <li>
-      <%= t.location_name %>
-    </li>
+
+  <div class="container toilet-results-container">
+
+    <% @toilets.each_slice(3) do |trio| %>
+      <div class="row">
+        <% trio.each do |t| %>
+          <%= link_to toilet_path(t.id) do %>
+            <div class="col-md-4 col-xs-12 toilet-card text-center">
+              <ul class="toilet-card-details">
+                <li><%= t.location_name %></li>
+                <li><%= t.toilet_type %></li>
+                <li><strong>Price: </strong><%= t.price %></li>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
 
-    </ul>
   </div>
+
 </div>
+
+
+
+
 
 
 
