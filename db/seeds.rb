@@ -18,6 +18,9 @@ user3 = User.create!(gender: "female", account_id: account13.id, toilet_user: tr
 user4 = User.create!(gender: "male", account_id: account14.id, toilet_user: false, toilet_owner: true)
 user5 = User.create!(gender: "male", account_id: account15.id, toilet_user: true, toilet_owner: false)
 
-toilet1 = Toilet.create!(location_address: "Marnixtraat 55, Amsterdam", location_name: "Shitter", user_id: 1, toilet_type: "Urinal", price: 2, shittable: false)
 toilet2 = Toilet.create!(location_address: "Jekerstaat 12, Amsterdam", location_name: "Clean toilet", user_id: 4, toilet_type: "Toilet bowl", price: 1, shittable: true)
-toilet3 = Toilet.create!(location_address: "Spui 4, Amsterdam", location_name: "Shithole", user_id: 1, toilet_type: "Toilet bowl", price: 3, shittable: true)
+toilet4 = Toilet.create!(location_address: "Jan van Galenstraat 335, Amsterdam", location_name: "Bar", user_id: 5, toilet_type: "Urinal", price: 0.75, shittable: false)
+toilet6 = Toilet.create!(location_address: "Sarphatistraat 27, Amsterdam", location_name: "Supermarket", user_id: 2, toilet_type: "Urinal", price: 0.5, shittable: false)
+toilet1 = Toilet.create!(location_address: "Marnixtraat 55, Amsterdam", location_name: "Shitter", user_id: 1, toilet_type: "Urinal", price: 2, shittable: false)
+toilet3 = Toilet.create!(location_address: "Wibautstraat 129, Amsterdam", location_name: "The Student Hotel", user_id: 1, toilet_type: "Toilet bowl", price: 2, shittable: true)
+toilet5 = Toilet.create!(location_address: "Govert Flinckstraat 15, Amsterdam", location_name: "Restaurant", user_id: 3, toilet_type: "Toilet bowl", price: 0.4, shittable: true)
