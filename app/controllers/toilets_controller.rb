@@ -4,10 +4,11 @@ class ToiletsController < ApplicationController
 
   def index
     @user_location = params[:user_location] if params[:user_location]
+    session[:user_location] = @user_location
     # @toilets = Toilet.all
 
     @closest_toilets = Toilet.near(@user_location, 2)
-    # @closest_toilet = @closest_toilets[0]
+    @closest_toilet = @closest_toilets[0]
 
 
     @toilets = Toilet.where.not(latitude: nil, longitude: nil)
@@ -17,13 +18,14 @@ class ToiletsController < ApplicationController
       marker.lng toilet.longitude
       # marker.infowindow render_to_string(partial: "/toilets/map_box", locals: { toilet: toilet })
     end
-    # flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"
+    flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"
   end
 
   def directions
-    # need tomake a hash containing the current user positon and the closest toulet locateion
-    @current_user_address = "Spui 55, Amsterdam"
+
+    @current_user_address = session[:user_location]
     @current_user_location = Geocoder.coordinates(@current_user_address)
+
     @current_user_lng = @current_user_location[1]
     @current_user_lat = @current_user_location[0]
     @current_toilet_lng = Toilet.find(params[:toilet_id]).longitude
@@ -37,6 +39,7 @@ class ToiletsController < ApplicationController
   end
 
   def show
+    @user_location = params[:user_location] if params[:user_location]
     @toilet = Toilet.select(user_id: current_account.id)
     @showtoilet = Toilet.find(params[:id])
   end
