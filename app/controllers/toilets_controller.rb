@@ -6,7 +6,6 @@ class ToiletsController < ApplicationController
     @user_location = params[:user_location] if params[:user_location]
     session[:user_location] = @user_location
     # @toilets = Toilet.all
-
     @closest_toilets = Toilet.near(@user_location, 2)
     @closest_toilet = @closest_toilets[0]
 
