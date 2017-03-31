@@ -1,15 +1,24 @@
-<h1>Toilets#new</h1>
-<p>Find me in app/views/toilets/new.html.erb</p>
 
-<%= simple_form_for @toilet do |f| %>
-  <%= f.input :location_name %>
-  <%= f.input :toilet_type %>
-  <%= f.select(:toilet_type) do %>
-    <% [['Classic bowl', 'bowl'], ['Urinal', 'urinal']].each do |c| -%>
-      <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  <%= f.input :location_address %>
-  <%= f.input :price %>
-  <%= f.button :submit %>
-<% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>Please enter the toilet details</p>
+        <div class="form-container">
+          <%= simple_form_for @toilet do |f| %>
+            <%= f.input :location_name %>
+            <%= f.input :toilet_type %>
+            <%= f.select(:toilet_type) do %>
+              <% [['Classic bowl', 'bowl'], ['Urinal', 'urinal']].each do |c| -%>
+                <%= content_tag(:option, c.first, value: c.last) %>
+              <% end %>
+            <% end %>
+            <%= f.input :location_address %>
+            <%= f.input :price %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
