@@ -13,6 +13,22 @@ class ToiletsController < ApplicationController
     end
   end
 
+  def directions
+    # need tomake a hash containing the current user positon and the closest toulet locateion
+    @current_user_address = "Spui 55, Amsterdam"
+    @current_user_location = Geocoder.coordinates(@current_user_address)
+    @current_user_lng = @current_user_location[1]
+    @current_user_lat = @current_user_location[0]
+    @current_toilet_lng = Toilet.find(params[:toilet_id]).longitude
+    @current_toilet_lat = Toilet.find(params[:toilet_id]).latitude
+
+    @toilets = [{longitude: @current_toilet_lng, latitude: @current_toilet_lat}, {longitude: @current_user_lng, latitude: @current_user_lat}]
+    @hash = Gmaps4rails.build_markers(@toilets) do |toilet, marker|
+      marker.lat toilet[:latitude]
+      marker.lng toilet[:longitude]
+    end
+  end
+
   def show
     @toilet = Toilet.select(user_id: current_account.id)
     @showtoilet = Toilet.find(params[:id])
