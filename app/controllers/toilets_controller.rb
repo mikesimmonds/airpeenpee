@@ -7,7 +7,7 @@ class ToiletsController < ApplicationController
     # @toilets = Toilet.all
 
     @closest_toilets = Toilet.near(@user_location, 2)
-    @closest_toilet = @closest_toilets[0]
+    # @closest_toilet = @closest_toilets[0]
 
 
     @toilets = Toilet.where.not(latitude: nil, longitude: nil)
@@ -17,7 +17,7 @@ class ToiletsController < ApplicationController
       marker.lng toilet.longitude
       # marker.infowindow render_to_string(partial: "/toilets/map_box", locals: { toilet: toilet })
     end
-    flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"
+    # flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"
   end
 
   def directions
