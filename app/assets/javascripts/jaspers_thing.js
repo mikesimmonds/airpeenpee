@@ -7,7 +7,6 @@ $( document ).ready(function(){
   });
 
 
-
   // $('#filter-button').click(
   //   $('#filter').show()
   // )

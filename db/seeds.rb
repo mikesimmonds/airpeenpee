@@ -37,3 +37,4 @@ toilet16 = Toilet.create!(location_address: "meidoornweg 202, Amsterdam", locati
 toilet17 = Toilet.create!(location_address: "a'dam lookout, Amsterdam", location_name: "Amsterdam tower", user_id: 1, toilet_type: "Urinal", price: 25, shittable: true)
 toilet18 = Toilet.create!(location_address: "tuinstraat 65, Amsterdam", location_name: "tuinstraat", user_id: 1, toilet_type: "Urinal", price: 25, shittable: true)
 toilet19 = Toilet.create!(location_address: "artis, Amsterdam", location_name: "Artis", user_id: 1, toilet_type: "Urinal", price: 25, shittable: true)
+
