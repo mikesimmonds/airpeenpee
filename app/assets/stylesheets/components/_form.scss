@@ -1,0 +1,40 @@
+.form-container {
+  // Postioning
+  position: relative;
+  display: block;
+  width: 40%;
+  margin: 1em auto;
+  text-align: center;
+  // visual
+  padding: 0.6em;
+  padding-bottom: 1em;
+  background: linear-gradient(320deg, $green, $green 95%, white);
+  // background: linear-gradient(310deg, $green 0%, white 100%);
+  border-radius: 8px;
+  box-shadow: 4px 4px 24px -1px rgba(0,0,0,0.47);
+  .form-inputs>div {
+    input {
+      // text-align: justify;
+      padding: 0.1em;
+      // margin: 4px;
+      // display: block;
+    }
+    label {
+      margin-right: 0.4em;
+      display: block;
+      .boolean {
+        // display: inline;
+      }
+    }
+  }
+
+}
+
+// body > div.wrapper > div > div > div > div > a:nth-child(3)
+
+.form-container > a {
+  padding: 0.5em;
+  color: white;
+  text-transform: uppercase;
+
+}
