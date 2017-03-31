@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :toilets do
     resources :visits
+    get "directions"
   end
 
   devise_for :accounts, :controllers => { registrations: "registrations"}
