@@ -7,9 +7,9 @@
         <p>How was your visit?</p>
         <div class="form-container">
           <%= simple_form_for [@toilet, @visit] do |f| %>
-          <%= f.input :rating %>
+          <%= f.input :rating, collection: 1..5, prompt: "Select your age", selected: 3 %>
           <%= f.input :has_paper %>
-          <%= f.input :comment %>
+          <%= f.input :comment, as: :text %>
           <%= f.button :submit %>
           <% end %>
         </div>
