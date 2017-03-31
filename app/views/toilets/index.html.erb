@@ -1,6 +1,6 @@
 <%= render 'components/map' %>
 
-<div class="text-center">
+<div class="wrapper">
   <div class="container toilet-results-container">
 
     <% @toilets.each_slice(3) do |trio| %>
@@ -15,8 +15,8 @@
               </ul>
             </div>
           <% end %>
-          <% end %>
-          <% end %>
+        <% end %>
       </div>
+    <% end %>
   </div>
 </div>
