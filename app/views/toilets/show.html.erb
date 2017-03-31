@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container toilet-deets-container">
 
   <div class="toilet-main-div ">
 
@@ -22,22 +22,22 @@
   <div class="toilet-attr-div">
 
     <div class="toilet-address">
-      <p><%= @showtoilet.location_address %></p>
+      <strong><p><%= @showtoilet.location_address %></p></strong>
     </div>
     <div class="toilet-price">
-      <p>€ <%= @showtoilet.price %></p>
+      <strong><p>€ <%= @showtoilet.price %></p></strong>
     </div>
     <div class="toilet-type">
-      <p><%= @showtoilet.toilet_type %></p>
+      <strong><p><%= @showtoilet.toilet_type %></p></strong>
     </div>
     <div class="toilet-shittable">
-      <p>
+      <strong><p>
         <% if @showtoilet.shittable == true %>
           Shittable
         <% else %>
           Unshittable
         <% end %>
-      </p>
+      </p></strong>
     </div>
 
   </div>

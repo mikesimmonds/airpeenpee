@@ -1,22 +1,26 @@
-<%= render 'components/map' %>
+<div class="wrapper" id="index-wrapper">
+  <div class="container">
+    <div class="row">
 
-<div class="wrapper">
-  <div class="container toilet-results-container">
 
-    <% @toilets.each_slice(3) do |trio| %>
-      <div class="row">
-        <% trio.each do |t| %>
-          <%= link_to toilet_path(t.id) do %>
-            <div class="col-md-4 col-xs-12 toilet-card text-center">
-              <ul class="toilet-card-details">
-                <li><%= t.location_name %></li>
-                <li><%= t.toilet_type %></li>
-                <li><strong>Price: </strong><%= t.price %></li>
-              </ul>
+      <div class="col-md-6">
+        <%= render 'components/map' %>
+      </div>
+
+
+      <div class="col-md-6 toilets-div">
+        <% @closest_toilets[0..5].each do |t| %>
+          <%= link_to toilet_path(t), { class: "toilet-card-link" } do %>
+            <div class="toilet-card">
+              <h1><%= t.location_name %></h1>
             </div>
           <% end %>
         <% end %>
       </div>
-    <% end %>
+
+
+
+
+    </div>
   </div>
 </div>
