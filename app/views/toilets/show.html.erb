@@ -12,7 +12,7 @@
 
   <div class="button-holder">
     <%= link_to "Go back", request.referer.present? ? request.referer : toilets_path, { class: "btn btn-primary btn-md" } %>
-    <%= link_to "Find this loo", toilet_directions_path(params[:id]), { class: "btn btn-primary btn-md" } %>
+    <%= link_to "Find this loo", toilet_directions_path(params[:id]), { class: "btn btn-primary btn-md", search_value: @user_location } %>
   </div>
 
  <!--  <div class="button-holder-2">

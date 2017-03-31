@@ -6,7 +6,7 @@
     <% @toilets.each_slice(3) do |trio| %>
       <div class="row">
         <% trio.each do |t| %>
-          <%= link_to toilet_path(t.id) do %>
+          <%= link_to toilet_path(t.id, search_value: @user_location) do %>
             <div class="col-md-4 col-xs-12 toilet-card text-center">
               <ul class="toilet-card-details">
                 <li><%= t.location_name %></li>
