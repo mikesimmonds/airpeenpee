@@ -1,25 +1,36 @@
 <div class="container">
 
-  <div class="toilet-img-div ">
+  <div class="toilet-main-div ">
 
-    <%= link_to ('https://www.placecage.com/c/200/300'), { target: "_blank" } do %>
-      <div class="toilet-img img-circle" style="background-image: url('https://static.pexels.com/photos/235948/pexels-photo-235948.jpeg');"></div>
-    <% end %>
+
+    <div class="toilet-name img-circle">
+      <h1><%= @showtoilet.location_name %></h1>
+    </div>
+
 
   </div>
 
+  <div class="button-holder">
+    <%= link_to "Go back", request.referer.present? ? request.referer : toilets_path, { class: "btn btn-primary btn-md" } %>
+    <%= link_to "Find this loo", ('https://static.pexels.com/photos/191845/pexels-photo-191845.jpeg'), { class: "btn btn-primary btn-md", target: "_blank" } %>
+  </div>
+
+ <!--  <div class="button-holder-2">
+    <button class="confirm-btn btn btn-primary btn-md">Go to the loo</button>
+  </div> -->
+
   <div class="toilet-attr-div">
 
-    <div class="toilet-rating">
+    <div class="toilet-address">
       <p><%= @showtoilet.location_address %></p>
     </div>
-    <div class="toilet-location">
+    <div class="toilet-price">
       <p>€ <%= @showtoilet.price %></p>
     </div>
-    <div class="toilet-price">
+    <div class="toilet-type">
       <p><%= @showtoilet.toilet_type %></p>
     </div>
-    <div class="toilet-paper">
+    <div class="toilet-shittable">
       <p>
         <% if @showtoilet.shittable == true %>
           Shittable

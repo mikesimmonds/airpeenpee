@@ -1,11 +1,17 @@
-.toilet-img {
-  background-size: 100% 100%;
+.toilet-name {
+  background-color: rgba(255, 239, 25, 0.2);
   height: 55vh;
   width: 55vh;
   border: 1px solid black;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.toilet-img-div {
+
+.toilet-main-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,35 +19,33 @@
 }
 
 .toilet-attr-div {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-aling: center;
 }
 
-.toilet-rating, .toilet-location, .toilet-price, .toilet-paper {
+.toilet-address, .toilet-type, .toilet-price, .toilet-shittable {
   border: 1px solid black;
   border-radius: 50%;
-  height: 20vh;
-  width: 20vh;
+  height: 35vh;
+  width: 35vh;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-color: rgba(107, 163, 255, 0.2);
 }
 
-.toilet-rating{
-  background-color: rgba(127, 164, 224, 0.4);
+.button-holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
-.toilet-location{
-  background-color: rgba(97, 206, 106, 0.4);
-}
-.toilet-price{
-  background-color: rgba(191, 65, 136, 0.4);
-}
-.toilet-paper{
-  background-color: rgba(255, 245, 56, 0.4);
-}
+
+
 
 
 
