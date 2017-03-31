@@ -15,6 +15,7 @@ class ToiletsController < ApplicationController
 
   def show
     @toilet = Toilet.select(user_id: current_account.id)
+    @showtoilet = Toilet.find(params[:id])
   end
 
   def new
