@@ -7,12 +7,7 @@
         <div class="form-container">
           <%= simple_form_for @toilet do |f| %>
             <%= f.input :location_name %>
-            <%= f.input :toilet_type %>
-            <%= f.select(:toilet_type) do %>
-              <% [['Classic bowl', 'bowl'], ['Urinal', 'urinal']].each do |c| -%>
-                <%= content_tag(:option, c.first, value: c.last) %>
-              <% end %>
-            <% end %>
+            <%= f.input :toilet_type, :collection => ['Urinal', 'Classic Bowl'], selected: 'Classic Bowl' %>
             <%= f.input :location_address %>
             <%= f.input :price %>
             <%= f.button :submit %>
