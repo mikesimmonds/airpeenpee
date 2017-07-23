@@ -1,6 +1,6 @@
 class ToiletsController < ApplicationController
 
-  skip_before_action :authenticate_account!, only: :index
+  skip_before_action :authenticate_account!, only: [:index, :jsonindex]
 
   def index
     @user_location = params[:user_location] if params[:user_location]
@@ -17,7 +17,13 @@ class ToiletsController < ApplicationController
       marker.lng toilet.longitude
       # marker.infowindow render_to_string(partial: "/toilets/map_box", locals: { toilet: toilet })
     end
-    flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"
+
+
+    respond_to do |format|
+      format.json {render json: @closest_toilets}
+      format.html     {flash[:notice]= "The closest toilet to your location is #{@closest_toilet.location_name}, #{@closest_toilet.location_address}"}
+    end
+
   end
 
   def directions
